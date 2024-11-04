@@ -15,7 +15,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+/* TODO Make background
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -25,9 +25,43 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
+*/
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+@keyframes blobMove {
+  0%, 100% {
+    transform: scale(1.1) translate(0, 0);
+  }
+  20% {
+    transform: scale(1.15) translate(-10px, -5px);
+  }
+  40% {
+    transform: scale(1.2) translate(5px, 10px);
+  }
+  60% {
+    transform: scale(1.15) translate(-5px, 10px);
+  }
+  80% {
+    transform: scale(1.1) translate(10px, -5px);
+  }
+}
+
+/* Blob style */
+.blob {
+  position: absolute;
+  top: 25%;
+  left: 66%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #0b1185 20%, transparent 80%);
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: blobMove 20s infinite ease-in-out;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+
+
