@@ -15,17 +15,8 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-/* TODO Make background
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-*/
+
+/* Fade-in animations */
 .fade-in {
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -34,11 +25,13 @@ body {
 .fade-in-active {
   opacity: 1;
 }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
 @keyframes blobMove {
   0%, 100% {
     transform: scale(1.1) translate(0, 0);
@@ -62,8 +55,8 @@ body {
   position: absolute;
   top: 25%;
   left: 66%;
-  width: 400px;
-  height: 400px;
+  width: 20vw; /* Use viewport width for dynamic sizing */
+  height: 20vw; /* Use viewport width for dynamic sizing */
   background: radial-gradient(circle, #0b1185 20%, transparent 80%);
   border-radius: 50%;
   filter: blur(120px);
@@ -72,4 +65,26 @@ body {
   opacity: 0.8;
 }
 
+/* Prevent horizontal overflow on small screens */
+body {
+  overflow-x: hidden;
+}
 
+/* Adjust blob position and size on smaller screens */
+@media (max-width: 768px) {
+  .blob {
+    left: 100%;
+    top: 50%;
+    transform: translateX(-100%) translateY(-50%);
+    width: 40vw; /* Increase size slightly for medium screens */
+    height: 40vw; /* Increase size slightly for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .blob {
+    left: 100%;
+    width: 10vw; /* Increase size for small screens */
+    height: 10vw; /* Increase size for small screens */
+  }
+}
