@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Link from 'next/link';
 
 export default function HomePage() {
   useEffect(() => {
@@ -12,7 +13,7 @@ export default function HomePage() {
     const header = document.getElementById("header");
     const footer = document.getElementById("footer");
 
-    // Add fade-in class with staggered timing using setTimeout
+    // Staggered fade-in animation
     if (title) setTimeout(() => title.classList.add("fade-in-active"), 100);
     if (subtitle) setTimeout(() => subtitle.classList.add("fade-in-active"), 1600);
     if (paragraph) setTimeout(() => paragraph.classList.add("fade-in-active"), 2600);
@@ -28,10 +29,10 @@ export default function HomePage() {
         <h1 className="text-xl font-bold">rubencurtis.dev</h1>
         <nav>
           <ul className="flex gap-4">
-            <li className="hover:text-primary transition-colors">Projects</li>
-            <li className="hover:text-primary transition-colors">List2</li>
-            <li className="hover:text-primary transition-colors">List3</li>
-            <li className="hover:text-primary transition-colors">List4</li>
+            <li className="hover:text-primary transition-colors hover:text-secondary"><Link href="/projects">Projects</Link></li>
+            <li className="hover:text-primary transition-colors hover:text-secondary">List2</li>
+            <li className="hover:text-primary transition-colors hover:text-secondary">List3</li>
+            <li className="hover:text-primary transition-colors hover:text-secondary">List4</li>
           </ul>
         </nav>
       </header>
@@ -53,9 +54,12 @@ export default function HomePage() {
             I'm an aspiring software engineer.
           </p>
         </div>
-
-        {/* Button positioned to the right of the text, on the left side of the screen */}
-        <button id="hero-button" className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-primary text-white px-6 py-3 rounded-md hover:bg-white hover:text-secondary transition-colors relative z-10 opacity-0 fade-in">
+    
+        {/* Download CV Button */}
+        <button
+        id="hero-button"
+        className="absolute left-0 outline-4 outline-blue-500 rounded-md transform transition-all duration-400 border-blue-400 top-1/2 translate-y-1/2 bg-secondary text-white px-6 py-3 hover:bg-white hover:text-secondary hover:scale-105 shadow-blue-500 relative z-10 opacity-0 fade-in"
+        style={{filter:'drop-shadow(4px 4px 4px #0b1185)',}}>
           Download my CV
         </button>
       </section>
