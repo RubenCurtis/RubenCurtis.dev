@@ -29,10 +29,10 @@ export default function HomePage() {
         <h1 className="text-xl font-bold">rubencurtis.dev</h1>
         <nav>
           <ul className="flex gap-4">
+            <li className="hover:text-primary transition-colors hover:text-secondary">About</li>
             <li className="hover:text-primary transition-colors hover:text-secondary"><Link href="/projects">Projects</Link></li>
-            <li className="hover:text-primary transition-colors hover:text-secondary">List2</li>
-            <li className="hover:text-primary transition-colors hover:text-secondary">List3</li>
-            <li className="hover:text-primary transition-colors hover:text-secondary">List4</li>
+            <li className="hover:text-primary transition-colors hover:text-secondary">Latest Project</li>
+            <li className="hover:text-primary transition-colors hover:text-secondary">Contact</li>
           </ul>
         </nav>
       </header>
@@ -48,10 +48,10 @@ export default function HomePage() {
             Hello!
           </h2>
           <h3 id="hero-subtitle" className="text-2xl font-bold mb-4 relative z-10 opacity-0 fade-in">
-            I'm Ruben
+            I&apos;m Ruben
           </h3>
           <p id="hero-paragraph" className="text-lg mb-8 max-w-lg relative z-10 opacity-0 fade-in">
-            I'm an aspiring software engineer.
+            I&apos;m an aspiring software engineer.
           </p>
         </div>
     
