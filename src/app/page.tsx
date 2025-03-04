@@ -5,6 +5,24 @@ import Link from 'next/link';
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
+  const [skipAnimations, setSkipAnimations] = useState(false);
+
+  // Set up a click event listener to skip animations
+  useEffect(() => {
+    const handleClick = () => {
+      if (!skipAnimations) {
+        setSkipAnimations(true);
+      }
+    };
+
+    // Add click event listener
+    document.addEventListener("click", handleClick);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [skipAnimations]);
 
   useEffect(() => {
     // Get the elements we want to animate
@@ -15,14 +33,24 @@ export default function HomePage() {
     const header = document.getElementById("header");
     const footer = document.getElementById("footer");
 
-    // Staggered fade-in animation
-    if (title) setTimeout(() => title.classList.add("fade-in-active"), 100);
-    if (subtitle) setTimeout(() => subtitle.classList.add("fade-in-active"), 1600);
-    if (paragraph) setTimeout(() => paragraph.classList.add("fade-in-active"), 2600);
-    if (button) setTimeout(() => button.classList.add("fade-in-active"), 2600);
-    if (header) setTimeout(() => header.classList.add("fade-in-active"), 2600);
-    if (footer) setTimeout(() => footer.classList.add("fade-in-active"), 2600);
-  }, []);
+    // If skipAnimations is true, add fade-in-active directly
+    if (skipAnimations) {
+      if (title) title.classList.add("fade-in-active");
+      if (subtitle) subtitle.classList.add("fade-in-active");
+      if (paragraph) paragraph.classList.add("fade-in-active");
+      if (button) button.classList.add("fade-in-active");
+      if (header) header.classList.add("fade-in-active");
+      if (footer) footer.classList.add("fade-in-active");
+    } else {
+      // Staggered fade-in animation
+      if (title) setTimeout(() => title.classList.add("fade-in-active"), 100);
+      if (subtitle) setTimeout(() => subtitle.classList.add("fade-in-active"), 1600);
+      if (paragraph) setTimeout(() => paragraph.classList.add("fade-in-active"), 2600);
+      if (button) setTimeout(() => button.classList.add("fade-in-active"), 2600);
+      if (header) setTimeout(() => header.classList.add("fade-in-active"), 2600);
+      if (footer) setTimeout(() => footer.classList.add("fade-in-active"), 2600);
+    }
+  }, [skipAnimations]);
 
   return (
     <div className="relative flex flex-col items-center min-h-screen bg-primary text-white w-full overflow-hidden">
