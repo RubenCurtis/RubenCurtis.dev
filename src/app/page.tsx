@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from 'next/link';
 
 export default function HomePage() {
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     // Get the elements we want to animate
     const title = document.getElementById("hero-title");
@@ -27,18 +29,38 @@ export default function HomePage() {
       {/* Navigation Bar */}
       <header id="header" className="w-full flex justify-between items-center p-4 bg-primary opacity-0 fade-in">
         <h1 className="text-xl font-bold">rubencurtis.dev</h1>
-        <nav>
+        
+        {/* Mobile Dropdown Menu */}
+        <div className="md:hidden relative">
+          <button 
+            className="text-white px-4 py-2 border border-secondary rounded-md"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            ☰
+          </button>
+          {isOpen && (
+            <ul className="absolute right-0 mt-2 w-48 z-50 bg-primary border border-secondary rounded-md shadow-lg">
+              <li><Link href="/about" className="block hover:bg-secondary w-full px-4 py-2">About</Link></li>
+              <li><Link href="/projects" className="block hover:bg-secondary w-full px-4 py-2">Projects</Link></li>
+              <li><Link href="/latestproject" className="block hover:bg-secondary w-full px-4 py-2">Latest Project</Link></li>
+              <li><Link href="/contact" className="block hover:bg-secondary w-full px-4 py-2">Contact</Link></li>
+            </ul>
+          )}
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex">
           <ul className="flex gap-4">
-            <li className="hover:text-primary transition-colors hover:text-secondary">About</li>
-            <li className="hover:text-primary transition-colors hover:text-secondary"><Link href="/projects">Projects</Link></li>
-            <li className="hover:text-primary transition-colors hover:text-secondary">Latest Project</li>
-            <li className="hover:text-primary transition-colors hover:text-secondary">Contact</li>
+            <li className="hover:text-secondary"><Link href="/about">About</Link></li>
+            <li className="hover:text-secondary"><Link href="/projects">Projects</Link></li>
+            <li className="hover:text-secondary"><Link href="/latestproject">Latest Project</Link></li>
+            <li className="hover:text-secondary"><Link href="/contact">Contact</Link></li>
           </ul>
         </nav>
       </header>
 
       {/* Moving Blob Background */}
-      <div className="blob"></div>
+      <div className="blob pointer-events-none"></div>
 
       {/* Hero Section */}
       <section className="relative flex items-center justify-start text-left py-16 px-4 flex-1 overflow-hidden w-full h-full max-w-screen-lg">

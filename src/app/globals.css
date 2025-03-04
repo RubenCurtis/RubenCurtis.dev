@@ -64,7 +64,7 @@ button {
 /* Blob style */
 .blob {
   position: absolute;
-  top: 25%;
+  top: 33%;
   left: 66%;
   width: 20vw; /* Use viewport width for dynamic sizing */
   height: 20vw; /* Use viewport width for dynamic sizing */
@@ -90,7 +90,7 @@ html, body {
     transform: translateY(-50%);
     width: 30vw; 
     height: 30vw;
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
@@ -99,7 +99,7 @@ html, body {
     right: -25vw; /* Moves it further off-screen */
     width: 20vw;
     height: 20vw;
-    opacity: 0.4;
+    opacity: 0.8;
   }
 }
 
