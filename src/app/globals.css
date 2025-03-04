@@ -77,25 +77,29 @@ button {
 }
 
 /* Prevent horizontal overflow on small screens */
-body {
+html, body {
   overflow-x: hidden;
+  width: 100%;
 }
 
-/* Adjust blob position and size on smaller screens */
 @media (max-width: 768px) {
   .blob {
-    left: 100%;
+    left: auto;  /* Removes absolute positioning pushing it too far */
+    right: -20vw; /* Moves it partially off-screen */
     top: 50%;
-    transform: translateX(-100%) translateY(-50%);
-    width: 40vw; /* Increase size slightly for medium screens */
-    height: 40vw; /* Increase size slightly for medium screens */
+    transform: translateY(-50%);
+    width: 30vw; 
+    height: 30vw;
+    opacity: 0.6;
   }
 }
 
 @media (max-width: 480px) {
   .blob {
-    left: 100%;
-    width: 10vw; /* Increase size for small screens */
-    height: 10vw; /* Increase size for small screens */
+    right: -25vw; /* Moves it further off-screen */
+    width: 20vw;
+    height: 20vw;
+    opacity: 0.4;
   }
 }
+

@@ -23,7 +23,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-primary text-white">
+    <div className="relative flex flex-col items-center min-h-screen bg-primary text-white w-full overflow-hidden">
       {/* Navigation Bar */}
       <header id="header" className="w-full flex justify-between items-center p-4 bg-primary opacity-0 fade-in">
         <h1 className="text-xl font-bold">rubencurtis.dev</h1>
@@ -41,7 +41,7 @@ export default function HomePage() {
       <div className="blob"></div>
 
       {/* Hero Section */}
-      <section className="relative flex items-center justify-start text-left py-16 px-4 flex-1 overflow-hidden w-full max-w-screen-lg">
+      <section className="relative flex items-center justify-start text-left py-16 px-4 flex-1 overflow-hidden w-full h-full max-w-screen-lg">
         {/* Container for Text */}
         <div className="flex flex-col items-start max-w-lg w-full md:w-1/3">
           <h2 id="hero-title" className="text-4xl font-bold mb-4 relative z-10 opacity-0 fade-in">
