@@ -80,19 +80,19 @@ button {
   }
 }
 
-/* Blob style */
+/* Blob style */ /*TODO maybe change it for thinner screens? Can hardly see "blob" at low horizontal res*/
 .blob {
   position: absolute;
-  top: 33%;
+  top: 25%;
   left: 66%;
-  width: 20vw; /* Use viewport width for dynamic sizing */
-  height: 20vw; /* Use viewport width for dynamic sizing */
-  background: radial-gradient(circle, #0b1185 20%, transparent 80%);
+  width: 30vw; /* Use viewport width for dynamic sizing */
+  height: 30vw; /* Use viewport width for dynamic sizing */
+  background: radial-gradient(circle, #0b1185 20%, transparent 100%);
   border-radius: 50%;
   filter: blur(120px);
   animation: blobMove 20s infinite ease-in-out;
   transform: translate(-50%, -50%);
-  opacity: 0.8;
+  opacity: 1;
 }
 
 /* Prevent horizontal overflow on small screens */
@@ -109,7 +109,7 @@ html, body {
     transform: translateY(-50%);
     width: 30vw; 
     height: 30vw;
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 
@@ -118,7 +118,7 @@ html, body {
     right: -25vw; /* Moves it further off-screen */
     width: 20vw;
     height: 20vw;
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 

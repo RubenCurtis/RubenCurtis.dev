@@ -54,7 +54,7 @@ export default function HomePage() {
 
   return (
     <div className="relative flex flex-col items-center min-h-screen bg-primary text-white w-full overflow-hidden">
-      {/* Navigation Bar */}
+      {/* Navigation Bar Header */}
       <header id="header" className="w-full flex justify-between items-center p-4 bg-primary opacity-0 fade-in">
         <h1 className="text-xl font-bold">rubencurtis.dev</h1>
         
