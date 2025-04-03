@@ -12,6 +12,9 @@ const config: Config = {
         primary: "#000000",
         secondary: "#0b1185",
       },
+      height: {
+        "h-1/3-screen": "33.33vh",
+      },
       keyframes: {
         "slide-in-from-top-fast": {
           "0%": { opacity: "0", transform: "translateY(-50px)" },
@@ -30,4 +33,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

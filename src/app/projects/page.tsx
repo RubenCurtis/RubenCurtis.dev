@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";//THIS WILL BE USED, BUT NOT YET
+import Link from "next/link"; //THIS WILL BE USED, BUT NOT YET
 
 export default function Projects() {
   //set slide in from top state
@@ -19,33 +19,54 @@ export default function Projects() {
 
     if (header) setTimeout(() => header.classList.add("fade-in-active"), 0);
   }, []);
+
   return (
     //Header TODO maybe do nav bar ?
-    <section className="relative flex flex-col py-4 px-4 w-full max-w-screen-lg">
-      <header id="header" className="w-full flex justify-between items-center fade-in bg-primary">
-        <h1 className="text-white text-xl font-bold">
-          <Link href="/">
-          rubencurtis.dev
-          </Link>
-        </h1>
-      </header>
+    <div className="min-h-screen overflow-auto">
+      <section className="relative flex flex-col py-4 px-4 w-full max-w-screen-lg">
+        <header id="header" className="w-full flex justify-between items-center fade-in bg-primary">
+          <h1 className="text-white text-xl font-bold">
+            <Link href="/">rubencurtis.dev</Link>
+          </h1>
+        </header>
 
-      <div className="relative flex flex-col items-start w-full bg-primary text-white p-4">
-      <h1
-          id="hero-title"
-          className={`text-4xl font-bold mb-4 transition-all duration-700 ${ //Looks ugly
-            showTitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
-          }`}>
-            Projects</h1>
-        <h2
-          id="projectnamething"
-          className={`text-4xl font-bold mb-4 transition-all duration-700 ${ // Comment above me was right
-            showSubtitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12" //Even copilot agreed with me
-          }`}>
-            Still working on it!</h2>
-      </div>
+        <div className="relative flex flex-col items-start w-full bg-primary text-white p-4">
+          <h1
+            id="hero-title"
+            className={`text-4xl font-bold mb-4 transition-all duration-700 ${ //Looks ugly
+              showTitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
+            }`}
+          >
+            Projects
+          </h1>
+          <h2
+            id="projectnamething"
+            className={`text-4xl font-bold mb-4 transition-all duration-700 ${ // Comment above me was right
+              showSubtitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12" //Even copilot agreed with me
+            }`}
+          >
+            Still working on it!
+          </h2>
+        </div>
+      </section>
       
-    <section className="relative flex flex-col py-16 px-4 w-full h-full max-w-screen-lg"></section>
-    </section>
+      <div className="flex flex-col bg-secondary text-white p-4 h-screen">
+  <section className="h-1/3-screen w-full flex items-center justify-center">
+    <h2 className="h-1/3-screen text-2xl font-semibold flex items-center justify-center">
+      Project 1
+    </h2>
+  </section>
+  <section className="h-1/3-screen w-full flex items-center justify-center">
+    <h2 className="h-1/3-screen text-8xl font-semibold flex items-center justify-center">
+      Project 2
+    </h2>
+  </section>
+  <section className="h-1/3-screen w-full flex items-center justify-center">
+    <h2 className="h-1/3-screen text-2xl font-semibold flex items-center justify-center">
+      Project 3
+    </h2>
+  </section>
+</div>
+    </div>
   );
 }
