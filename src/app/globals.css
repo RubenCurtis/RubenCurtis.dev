@@ -72,10 +72,6 @@ button {
   }
 }
 
-.animate-slide-in-from-top {
-  animation: slide-in-from-top 0.5s ease-out forwards;
-}
-
 @keyframes blobMove {
   0%, 100% {
     transform: scale(1.1) translate(0, 0);
