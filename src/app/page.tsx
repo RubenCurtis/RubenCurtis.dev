@@ -44,11 +44,11 @@ export default function HomePage() {
     } else {
       // Staggered fade-in animation
       if (title) setTimeout(() => title.classList.add("fade-in-active"), 100);
-      if (subtitle) setTimeout(() => subtitle.classList.add("fade-in-active"), 1600);
-      if (paragraph) setTimeout(() => paragraph.classList.add("fade-in-active"), 2600);
-      if (button) setTimeout(() => button.classList.add("fade-in-active"), 2600);
-      if (header) setTimeout(() => header.classList.add("fade-in-active"), 2600);
-      if (footer) setTimeout(() => footer.classList.add("fade-in-active"), 2600);
+      if (subtitle) setTimeout(() => subtitle.classList.add("fade-in-active"), 200);
+      if (paragraph) setTimeout(() => paragraph.classList.add("fade-in-active"), 400);
+      if (button) setTimeout(() => button.classList.add("fade-in-active"), 400);
+      if (header) setTimeout(() => header.classList.add("fade-in-active"), 400);
+      if (footer) setTimeout(() => footer.classList.add("fade-in-active"), 400);
     }
   }, [skipAnimations]);
 

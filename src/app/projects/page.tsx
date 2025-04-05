@@ -1,20 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link"; //THIS WILL BE USED, BUT NOT YET
+import Link from "next/link";
 
 export default function Projects() {
-  //set slide in from top state
+  //set slide in from top state PER ELEMENT
   const [, setIsVisible] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
   const [showSubtitle, setShowSubtitle] = useState(false);
+  const [showProject1, setShowProject1] = useState(false);
+  const [showProject2, setShowProject2] = useState(false);
+  const [showProject3, setShowProject3] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 1400);
     setTimeout(() => setShowTitle(true), 200); // "Projects"
-    setTimeout(() => setShowSubtitle(true), 400); // "Still working on it!" #TODO fix this to project name or subtitle idk yet maybe i shouldve planned this better
+    setTimeout(() => setShowSubtitle(true), 400); // "All projects:"
+    setTimeout(() => setShowProject1(true), 600); // "Project 1"
+    setTimeout(() => setShowProject2(true), 800); // "Project 2"
+    setTimeout(() => setShowProject3(true), 1000); // "Project 3"
 
-    //Get elements that fade in on every page to work
+    //Get elements that fade in on every page to work, think back to the home page
     const header = document.getElementById("header");
 
     if (header) setTimeout(() => header.classList.add("fade-in-active"), 0);
@@ -40,29 +46,35 @@ export default function Projects() {
             Projects
           </h1>
           <h2
-            id="projectnamething"
+            id="project-subtitle"
             className={`text-4xl font-bold mb-4 transition-all duration-700 ${ // Comment above me was right
               showSubtitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12" //Even copilot agreed with me
             }`}
           >
-            Still working on it!
+            All Projects:
           </h2>
         </div>
       </section>
-      
-      <div className="flex flex-col bg-secondary text-white p-4 h-screen">
-  <section className="h-1/3-screen w-full flex items-center justify-center">
-    <h2 className="h-1/3-screen text-2xl font-semibold flex items-center justify-center">
+
+  <div className="flex flex-col text-white p-4">
+  <section className={`text-4xl h-[33.33vh] font-bold w-full flex items-center justify-center mb-4 transition-all bg-secondary duration-700 ${ //HADOOP KMEANS SURELY!
+            showProject1 ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
+          }`}>
+    <h2 className="h-[33.33vh] text-8xl font-semibold flex items-center justify-center">
       Project 1
     </h2>
   </section>
-  <section className="h-1/3-screen w-full flex items-center justify-center">
-    <h2 className="h-1/3-screen text-8xl font-semibold flex items-center justify-center">
+  <section className={`text-4xl h-[33.33vh] font-bold w-full flex items-center justify-center mb-4 transition-all bg-secondary duration-700 ${ //RUBENCURTIS.DEV
+            showProject2 ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
+          }`}>
+    <h2 className="h-[33.33vh] text-8xl font-semibold flex items-center justify-center">
       Project 2
     </h2>
   </section>
-  <section className="h-1/3-screen w-full flex items-center justify-center">
-    <h2 className="h-1/3-screen text-2xl font-semibold flex items-center justify-center">
+  <section className={`text-4xl h-[33.33vh] font-bold w-full flex items-center justify-center mb-4 transition-all bg-secondary duration-700 ${ //unsure on this one however
+            showProject3 ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
+          }`}>
+    <h2 className="h-[33.33vh] text-2xl font-semibold flex items-center justify-center">
       Project 3
     </h2>
   </section>
@@ -70,3 +82,5 @@ export default function Projects() {
     </div>
   );
 }
+// TODO: CLEAN THIS UP, MAYBE CHANGE PARENT DIV BECAUSE WHY IS IT A PARENT TO 3 SECTIONS???????
+// ITS WORKING RIGHT NOW BUT ANY VISUAL CHANGES MIGHT NEED CHANGE TO SECTION
