@@ -40,7 +40,7 @@ export default function Projects() {
           <h1
             id="hero-title"
             className={`text-4xl font-bold mb-4 transition-all duration-700 ${ //Looks ugly
-              showTitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
+              showTitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12" //
             }`}
           >
             Projects

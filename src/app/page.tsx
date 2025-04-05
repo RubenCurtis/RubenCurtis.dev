@@ -1,11 +1,37 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from 'next/link';
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
   const [skipAnimations, setSkipAnimations] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.5 } // Trigger when half of the section is in view
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    // Cleanup function: Unobserve when the component is unmounted
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   // Set up a click event listener to skip animations
   useEffect(() => {
@@ -51,9 +77,17 @@ export default function HomePage() {
       if (footer) setTimeout(() => footer.classList.add("fade-in-active"), 400);
     }
   }, [skipAnimations]);
+  
 
   return (
-    <div className="relative flex flex-col items-center min-h-screen bg-primary text-white w-full overflow-hidden">
+      <div className="relative flex flex-col items-center min-h-screen bg-primary text-white w-full overflow-auto">
+        {/* Ensure scroll-smooth on the root */}
+        <style jsx global>{`
+          html, body {
+            scroll-behavior: smooth;
+          }
+        `}</style>
+
       {/* Navigation Bar Header */}
       <header id="header" className="w-full flex justify-between items-center p-4 bg-primary opacity-0 fade-in">
         <h1 className="text-xl font-bold">
@@ -81,7 +115,7 @@ export default function HomePage() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex">
           <ul className="flex gap-4">
-            <li className="hover:text-secondary"><Link href="/about">About</Link></li>
+            <li className="hover:text-secondary"><a href="#about">About</a></li>
             <li className="hover:text-secondary"><Link href="/projects">Projects</Link></li>
             <li className="hover:text-secondary"><Link href="/latestproject">Latest Project</Link></li>
             <li className="hover:text-secondary"><Link href="/contact">Contact</Link></li>
@@ -93,7 +127,7 @@ export default function HomePage() {
       <div className="blob pointer-events-none z-10"></div>
 
       {/* Hero Section */}
-      <section className="relative flex items-center justify-start text-left py-16 px-4 flex-1 overflow-hidden w-full h-full max-w-screen-lg">
+        <section className="relative flex items-center justify-center text-center py-16 px-4 min-h-screen w-full">
         {/* Container for Text */}
         <div className="flex flex-col items-start max-w-lg w-full md:w-1/3">
           <h2 id="hero-title" className="text-4xl font-bold mb-4 relative z-10 opacity-0 fade-in">
@@ -116,10 +150,23 @@ export default function HomePage() {
         </button>
       </section>
 
-      {/* Footer */}
-      <footer id="footer" className="w-full bg-primary text-white text-center p-4 opacity-0 fade-in z-0">
-        <p>rubencurtis.dev</p>
-      </footer>
+      <section
+      id="about"
+      ref={sectionRef}
+      className={`relative flex flex-shrink-0 items-center justify-start text-left py-16 px-4 flex-1 overflow-auto scroll-smooth w-full max-w-screen-lg transition-opacity duration-1000 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
+      <h2 className="text-3xl font-bold mb-4">About</h2>
+      <p className="text-lg max-w-3xl mx-auto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      </p>
+    </section>
+      
+    {/* Footer */}
+    <footer id="footer" className="w-full bg-primary text-white text-center p-4 opacity-0 fade-in z-0">
+      <p>rubencurtis.dev</p>
+    </footer>
     </div>
   );
 }
