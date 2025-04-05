@@ -90,7 +90,7 @@ export default function HomePage() {
       </header>
 
       {/* Moving Blob Background */}
-      <div className="blob pointer-events-none"></div>
+      <div className="blob pointer-events-none z-10"></div>
 
       {/* Hero Section */}
       <section className="relative flex items-center justify-start text-left py-16 px-4 flex-1 overflow-hidden w-full h-full max-w-screen-lg">
@@ -117,7 +117,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer id="footer" className="w-full bg-primary text-white text-center p-4 opacity-0 fade-in">
+      <footer id="footer" className="w-full bg-primary text-white text-center p-4 opacity-0 fade-in z-0">
         <p>rubencurtis.dev</p>
       </footer>
     </div>
