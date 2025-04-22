@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         primary: "#000000",
         secondary: "#0b1185",
+        tertiary: "#000066",
+        quaternary: "#000000",
       },
       height: {
         "h-1/3-screen": "33.33vh",
