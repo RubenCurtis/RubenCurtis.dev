@@ -95,13 +95,13 @@ export default function Projects() {
       rubencurtis.dev
     </h2>
     <p className="text-2xl px-8 pb-8 font-semibold">
-      A personal website to showcase my projects and skills, built with Next.js and Tailwind CSS.
+      A website built with Next.js and Tailwind CSS.
     </p>
     <p className="text-2xl px-8 font-semibold">
       Tools Used:
     </p>
     <p className="text-m px-8 pb-8 opacity-50 font-semibold">
-      Next.js, Tailwind CSS, TypeScript, React, Git.
+      Next.js, Tailwind CSS, TypeScript, React, Git, HTML.
     </p>
     <button className="bg-tertiary text-white px-4 py-2 rounded-md hover:bg-tertiary/50 transition duration-300 p-8 absolute bottom-4 right-4">
       <a href="https://github.com/RubenCurtis/rubencurtis.dev"
@@ -110,16 +110,6 @@ export default function Projects() {
       View on GitHub
       </a>
     </button>
-    </section>
-    <section 
-      className={`text-4xl h-[33.33vh] font-bold w-full flex items-center justify-center transition-all bg-secondary/40 border-2 border-tertiary duration-700 ${ //unsure on this one however
-        showProject3
-          ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
-      }`}
-    >
-    <h2 className="h-[33.33vh] text-2xl font-semibold flex items-center justify-center">
-      Project 3
-    </h2>
     </section>
   </div>
 </div>
