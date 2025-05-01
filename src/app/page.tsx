@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from 'next/link';
 import { MdEmail } from 'react-icons/md';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
