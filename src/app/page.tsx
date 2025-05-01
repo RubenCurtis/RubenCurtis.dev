@@ -127,7 +127,7 @@ export default function HomePage() {
       >
         <h2 className="text-3xl font-bold mb-4">About</h2>
         <p className="text-lg max-w-3xl mx-auto">
-          I've been writing programs since the age of thirteen, I enjoy the challenges of solving problems and building software that makes a difference.
+          I&apos;ve been writing programs since the age of thirteen, I enjoy the challenges of solving problems and building software that makes a difference.
           Recently graduated from Royal Holloway, University of London with a degree in Computer Science, the course providing me with the necessary skills 
           for creating efficient software algorithms.
           <br /><br />
