@@ -156,6 +156,7 @@ export default function HomePage() {
       <footer id="footer" className="w-full bg-primary text-white text-center p-4 opacity-0 fade-in z-0">
         <p>rubencurtis.dev</p>
       </footer>
+    <SpeedInsights />
     </div>
   );
 }
