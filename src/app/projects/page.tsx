@@ -47,8 +47,8 @@ export default function Projects() {
           </h1>
           <h2
             id="project-subtitle"
-            className={`text-4xl font-bold mb-4 transition-all duration-700 ${ // Comment above me was right
-              showSubtitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12" //Even copilot agreed with me
+            className={`text-4xl font-bold mb-4 transition-all duration-700 ${ //Also looks ugly
+              showSubtitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12" 
             }`}
           >
             All Projects:
