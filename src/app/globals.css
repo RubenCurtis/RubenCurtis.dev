@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS variables for light/dark themes */
 :root {
   --foreground: #000000; /* black */
   --background-start: #D6DBDC; /* grey */
   --background-end: #FFFFFF; /* white */
 }
 
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: #FFFFFF; /* white */
@@ -34,9 +36,12 @@
     z-index: -1;
   }
 }
+
+/* Button transition for colors */
 button {
   transition: background-color 0.4s ease-in-out, color 0.6s ease-in-out;
 }
+
 /* Fade-in animations */
 .fade-in {
   opacity: 0;
@@ -47,6 +52,7 @@ button {
   opacity: 1;
 }
 
+/* Specific fade-in for hero button */
 #hero-button.fade-in {
   opacity: 0;
   transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out, opacity 0.6s ease-in-out;
@@ -56,11 +62,14 @@ button {
   opacity: 1;
 }
 
+/* Utility for balanced text wrap */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+/* Keyframe animations */
 @keyframes slide-in-from-top {
   0% {
     opacity: 0;
@@ -90,13 +99,13 @@ button {
   }
 }
 
-/* Blob style */ /*TODO maybe change it for thinner screens? Can hardly see "blob" at low horizontal res*/
+/* Blob style */
 .blob {
   position: absolute;
   top: 25%;
   left: 66%;
-  width: 30vw; /* Use viewport width for dynamic sizing */
-  height: 30vw; /* Use viewport width for dynamic sizing */
+  width: 30vw;
+  height: 30vw;
   background: radial-gradient(circle, #0b1185 20%, transparent 100%);
   border-radius: 50%;
   filter: blur(120px);
@@ -111,13 +120,14 @@ html, body {
   width: 100%;
 }
 
+/* Responsive adjustments for blob */
 @media (max-width: 768px) {
   .blob {
-    left: auto;  /* Removes absolute positioning pushing it too far */
-    right: -20vw; /* Moves it partially off-screen */
+    left: auto;
+    right: -20vw;
     top: 50%;
     transform: translateY(-50%);
-    width: 30vw; 
+    width: 30vw;
     height: 30vw;
     opacity: 1;
   }
@@ -125,10 +135,9 @@ html, body {
 
 @media (max-width: 480px) {
   .blob {
-    right: -25vw; /* Moves it further off-screen */
+    right: -25vw;
     width: 20vw;
     height: 20vw;
     opacity: 1;
   }
 }
-
