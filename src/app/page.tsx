@@ -70,7 +70,7 @@ useEffect(() => {
   return (
     <div className="flex flex-col items-center min-h-screen w-full bg-primary text-white scroll-smooth">
 
-      <div className="blob pointer-events-none fixed top-1/4 left-2/3 -translate-x-1/2 -translate-y-1/2 z-0 overflow-hidden"></div>
+      <div className="blob pointer-events-none fixed top-1/4 left-2/3 -translate-x-1/2 -translate-y-1/2 z-0"></div>
 
       {/* Header */}
       <header
