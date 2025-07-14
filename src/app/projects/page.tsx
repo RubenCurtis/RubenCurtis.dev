@@ -30,26 +30,24 @@ export default function Projects() {
     //Header TODO maybe do nav bar ?
     <div className="min-h-screen overflow-auto">
       <section className="relative flex flex-col py-4 px-4 w-full max-w-screen-lg">
-        <header id="header" className="w-full flex justify-between items-center fade-in bg-primary">
-          <h1 className="text-white text-xl font-bold">
-            <Link href="/">rubencurtis.dev</Link>
-          </h1>
-        </header>
         <div className="relative flex flex-col items-start w-full bg-primary text-white p-4">
           <h1
             id="hero-title"
-            className={`text-4xl font-bold mb-4 transition-all duration-700 ${ //Looks ugly
-              showTitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12" //
+            className={`mb-4 font-bold transition-all duration-700 ${
+              showTitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
             }`}
-          >
+            style={{ fontSize: "clamp(2.5rem, 5vw + 1rem, 5.5rem)" }}
+            >
             Projects
           </h1>
+
           <h2
             id="project-subtitle"
-            className={`text-4xl font-bold mb-4 transition-all duration-700 ${ //Also looks ugly
-              showSubtitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12" 
+            className={`mb-4 font-bold transition-all duration-700 ${
+              showSubtitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
             }`}
-          >
+            style={{ fontSize: "clamp(2.5rem, 5vw + 1rem, 5.5rem)" }}
+            >
             All Projects:
           </h2>
         </div>
@@ -63,7 +61,12 @@ export default function Projects() {
           : "opacity-0 -translate-y-12 invisible"
       }`}
     >
-    <h2 className="text-6xl p-8 font-semibold">
+    <h2
+      className={`p-8 font-semibold transition-all duration-700 ${
+        showProject1 ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
+      }`}
+      style={{ fontSize: "clamp(2.5rem, 5vw + 1rem, 5.5rem)" }}
+    >
       K-Means in Hadoop
     </h2>
     <p className="text-2xl px-8 pb-8 font-semibold">
