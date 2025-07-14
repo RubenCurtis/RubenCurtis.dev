@@ -18,7 +18,7 @@ export default function Header() {
         id="header"
         className="w-full flex justify-between items-center p-4 bg-primary text-primary opacity-0 fade-in"
       >
-        <h1 className="text-xl font-bold">rubencurtis.dev</h1>
+        <h1 className="text-xl font-bold"><Link href="/" rel="noopener noreferrer">rubencurtis.dev</Link></h1>
         <div className="md:hidden relative">
           <button
             className="text-white px-4 py-2 border border-secondary rounded-md"
