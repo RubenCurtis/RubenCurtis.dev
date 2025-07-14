@@ -35,7 +35,6 @@ export default function Projects() {
             <Link href="/">rubencurtis.dev</Link>
           </h1>
         </header>
-
         <div className="relative flex flex-col items-start w-full bg-primary text-white p-4">
           <h1
             id="hero-title"

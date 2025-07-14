@@ -7,6 +7,7 @@
   --foreground: #000000; /* black */
   --background-start: #D6DBDC; /* grey */
   --background-end: #FFFFFF; /* white */
+  --colour-primary: #FFFFFF; /* white */
 }
 
 /* Dark mode overrides */
@@ -15,6 +16,7 @@
     --foreground: #FFFFFF; /* white */
     --background-start: #000000; /* black */
     --background-end: #000000; /* black */
+    --colour-primary: #FFFFFF; /* white */
   }
 
   html, body {
@@ -34,6 +36,11 @@
     height: 100vh;
     background: var(--background-start);
     z-index: -1;
+  }
+}
+@layer utilities {
+  .text-primary {
+    color: var(--colour-primary);
   }
 }
 
@@ -123,4 +130,3 @@ html, body {
   overflow-x: hidden;
   width: 100%;
 }
-
